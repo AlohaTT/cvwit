@@ -35,7 +35,7 @@ class Paper(models.Model):
 
     author = models.CharField('文章作者', max_length=256)
     #仅修改 content 字段
-
+    file = models.FileField('文件')
     def get_absolute_url(self):
         return reverse('article', args=(self.pk, self.slug))
 
