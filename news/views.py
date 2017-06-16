@@ -15,7 +15,8 @@ def index(request):
 
 def column_detail(request, column_slug):
     column = Column.objects.get(slug=column_slug)
-    return render(request, 'news/column.html', {'column': column})
+    article = column.article_set.all()
+    return render(request, 'news/column.html', {'column': column, 'article': article})
 
 def article_detail(request, pk, article_slug):
     article = Article.objects.get(pk=pk)

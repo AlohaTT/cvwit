@@ -6,8 +6,10 @@
 
 
 {% block content %}
-<h1>文章标题： {{ article.title }}</h1>
-<div id="main">
-    {{ article.content }}
+<div class="container">
+	<h1>文章标题： {{ article.title }}</h1>
+	<div id="main">
+		{{ article.content | safe }}
+	</div>
 </div>
 {% endblock content %}

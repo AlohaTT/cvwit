@@ -5,7 +5,23 @@
 {% endblock title %}
 
 {% block content %}
-栏目简介：{{ column.intro }}
-栏目文章列表：
-还需要完善
+<div class="container">
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading">栏目文章列表</div>
+		<div class="panel-body">
+		<p>{{column.intro}}</p>
+		</div>
+		<!-- List group -->
+		<ul class="list-group">
+			{%for article in article%}
+			<li type="button" class="list-group-item"><a href="{{ article.get_absolute_url }}">{{article.title}}</a></li>
+			{%endfor%}
+		</ul>
+	</div>
+
+	栏目简介：{{ column.intro }}
+	栏目文章列表：
+	还需要完善
+</div>
 {% endblock content %}
